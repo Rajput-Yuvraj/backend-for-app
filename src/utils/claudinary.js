@@ -19,9 +19,12 @@ const uploadOnClaudinary = async (localFilePath)=> {
         return response;
 
     } catch(error) {
-        fs.unlinkSync(localFilePath )//remove the locally saved temp file as the upload operation fail
+        fs.unlinkSync(localFilePath )//remove the locally saved temp file as the upload operation failed
+        return null;
     }
 }
+
+export {uploadOnClaudinary}
 
 // const uploadResult = await cloudinary.uploader
 //     .upload(
